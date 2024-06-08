@@ -1,0 +1,36 @@
+@import '../../styles.scss';
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.details {
+  width: 50%;
+
+
+  h4{
+    font-weight: 400;
+  }
+  .form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    input{
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #c0c0c0;
+      border-radius: 5px;
+      outline: none;
+    }
+    button{
+      padding: 0.5rem;
+      border: none;
+      border-radius: 5px;
+      background: linear-gradient(135deg, #21d4fd 0%, #2152ff 100%);
+      color: white;
+      cursor: pointer;
+      outline: none;
+    }
+  }
+}
