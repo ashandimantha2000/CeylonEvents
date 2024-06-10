@@ -34,6 +34,7 @@ h2 {
     }
     button {
       @include btn($bg: black, $stroke: white);
+
       width: 12rem;
       height: 3rem;
       border-radius: 0rem;
