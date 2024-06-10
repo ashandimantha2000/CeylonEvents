@@ -1,9 +1,9 @@
-import './Hero.scss';
+import styles from './Hero.module.scss';
 
 function Landing() {
   return (
     <div>
-      <div className="background">
+      <div>
         <img src="../src/assets/images/Home/background1.png" alt="home-back" />
       </div>
     </div>

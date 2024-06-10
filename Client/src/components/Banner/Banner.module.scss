@@ -1,0 +1,32 @@
+@import "../../styles/base.scss";
+$radius: 1rem;
+
+.card {
+  background-color: black;
+  color: white;
+  border-radius: $radius;
+  display: flex;
+  height: 20rem;
+  &_data {
+    padding: 3rem;
+  }
+  h1 {
+    font-size: 4rem;
+    font-weight: 800;
+  }
+  h3 {
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
+  img {
+    width: 180%;
+    object-fit: cover;
+    border-radius: 0 $radius $radius 0rem;
+  }
+  button {
+    @include btn($bg: white, $stroke: black);
+    margin-bottom: 1rem;
+  }
+}
+
+
