@@ -2,6 +2,7 @@ import Hero from "../components/Hero/Hero";
 import Event from "../components/Event/Event";
 import Banner from "../components/Banner/Banner";
 import Newsletter from "../components/Newsletter/Newsletter";
+import Footer from "../components/Footer/Footer";
 
 function Home() {
   return (
@@ -18,6 +19,7 @@ function Home() {
       </main>
       <Banner />
       <Newsletter />
+      <Footer />
     </div>
   );
 }
