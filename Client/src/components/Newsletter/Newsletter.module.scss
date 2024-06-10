@@ -1,0 +1,45 @@
+@import "../../styles/base.scss";
+
+.back {
+  fill: linear-gradient(94deg, #76ffe6 13%, #6d96ff 86.47%);
+  filter: blur(10rem);
+  height: 20rem;
+  background: linear-gradient(94deg, #76ffe6 13%, #6d96ff 86.47%);
+  z-index: -1;
+  position: relative;
+}
+h2 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.news {
+  padding: 4rem;
+  position: absolute;
+
+  &_details {
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    input {
+      width: 20rem;
+      height: 3rem;
+      border-radius: 0rem;
+      border: 0rem;
+      padding: 0.5rem;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    button {
+      @include btn($bg: black, $stroke: white);
+      width: 12rem;
+      height: 3rem;
+      border-radius: 0rem;
+    }
+    p{
+        margin-right: 7rem;
+    }
+  }
+}
