@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import "./Nav.scss";
+import styles from "./Nav.module.scss";
 
 const data = [
   {
@@ -23,13 +23,13 @@ const data = [
 function Nav() {
   return (
     <>
-      <div className="nav">
-        <div className="nav-logo">
+      <div className={styles.nav}>
+        <div className={styles.nav_logo}>
           <h2>
             <span>Ceylon</span>Events
           </h2>
         </div>
-        <div className="nav-menu">
+        <div className={styles.nav_menu}>
           <ul>
             {data.map((item) => {
               return (

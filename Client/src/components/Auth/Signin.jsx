@@ -1,4 +1,4 @@
-import "./Auth.scss";
+import styles from './Auth.module.scss';
 
 function Signin() {
   return (

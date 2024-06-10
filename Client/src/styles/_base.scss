@@ -1,16 +1,14 @@
-@use "variables" as var;
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@mixin btn($bg: black, $stroke: white) {
+  background-color: $bg;
+  color: $stroke;
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
-body{
-    font-family: 'Inter', sans-serif;
+.headerss {
+  font-weight: bold;
+  font-size: 2rem;
+  padding-bottom: 1.6rem;
 }
-
-body {
-  background: var.$bg;
-}
-
