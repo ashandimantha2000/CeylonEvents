@@ -1,9 +1,10 @@
+import React from "react";
 import Hero from "../components/Hero/Hero";
 import Event from "../components/Event/Event";
 import Banner from "../components/Banner/Banner";
 import Newsletter from "../components/Newsletter/Newsletter";
 
-function Home() {
+function Events() {
   return (
     <div>
       <Hero />
@@ -16,4 +17,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Events;
