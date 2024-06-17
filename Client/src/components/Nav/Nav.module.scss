@@ -1,5 +1,7 @@
+@import "../../styles/base.scss";
+
 .nav {
-    z-index: 100;
+  z-index: 100;
   position: fixed;
   width: 100%;
   display: flex;
@@ -19,10 +21,20 @@
   &_menu {
     ul {
       display: flex;
+      align-items: center;
       a {
         padding: 2rem 1.2rem;
       }
     }
+    button {
+      @include btn2($bg: red, $stroke: white);
+      display: flex;
+      align-items: center;
+    }
   }
 }
 
+
+.navcolor{
+  background: black;
+}
