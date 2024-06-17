@@ -14,7 +14,7 @@ function Event() {
     headerText = 'Related Events';
   }
   return (
-    <div>
+    <div> 
       <h1 className="headerss">{headerText}</h1>
       <div className={styles.all}>
         {content.map((event) => (
@@ -33,7 +33,7 @@ function Event() {
                   <h5>{event.location}</h5>
                 </div>
                 <h3>{event.name}</h3>
-                <p>{event.description}</p>
+                <p>{event.description.slice(0, 250)}...</p>
                 <a href={event.link}>
                   <button>View Details</button>
                 </a>

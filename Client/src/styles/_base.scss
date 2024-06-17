@@ -8,6 +8,21 @@
   font-weight: 500;
 }
 
+@mixin btn2($bg: black, $stroke: white) {
+  background-color: $bg;
+  color: $stroke;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.3rem;
+  border: 0.07rem solid $bg;
+  font-size: 1rem;
+  font-weight: 500;
+  &:hover{
+    background-color: $stroke;
+    color: $bg;
+  
+  }
+}
+
 .headerss {
   font-weight: bold;
   font-size: 2rem;

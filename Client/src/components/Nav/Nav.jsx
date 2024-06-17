@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styles from "./Nav.module.scss";
+import { useLocation } from "react-router-dom";
 
 const data = [
   {
@@ -21,13 +22,18 @@ const data = [
 ];
 
 function Nav() {
+  const location = useLocation();
+  const page = location.pathname === "/login" || location.pathname === "/signup";
+  const navClass = `${styles.nav} ${page ? styles.navcolor : ''}`;
   return (
     <>
-      <div className={styles.nav}>
+      <div className={navClass}>
         <div className={styles.nav_logo}>
-          <h2>
-            <span>Ceylon</span>Events
-          </h2>
+          <NavLink to="/">
+            <h2>
+              <span>Ceylon</span>Events
+            </h2>
+          </NavLink>
         </div>
         <div className={styles.nav_menu}>
           <ul>
@@ -38,6 +44,9 @@ function Nav() {
                 </NavLink>
               );
             })}
+            <NavLink to="/login">
+              <button>Login</button>
+            </NavLink>
           </ul>
         </div>
       </div>

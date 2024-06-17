@@ -5,10 +5,9 @@ $radius: 0.6rem;
 .all {
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
-  
-  flex-direction: row;
+  justify-content: space-between;
   flex-wrap: wrap;
+
   .card {
     width: calc(#{$width} + 1.4rem);
     background-color: white;
@@ -25,7 +24,9 @@ $radius: 0.6rem;
     p {
       width: calc(#{$width} - 1rem);
       padding: 15px 0px;
+      padding-right: 0.4rem;
       font-size: 0.9rem;
+      text-align: justify;
     }
     h5 {
       font-weight: 400;
@@ -49,6 +50,43 @@ $radius: 0.6rem;
     }
     .cardspace {
       padding: 1.4rem;
+    }
+  }
+}
+
+.details {
+  .headline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .details_data {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-bottom: 0.6rem;
+    margin: -1rem 1rem -1rem 0rem;
+    h5 {
+      margin: 1rem 2rem 1rem 0.4rem;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+  }
+  h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+  p {
+    margin: 1rem 0rem;
+    text-align: justify;
+  }
+
+  button {
+    @include btn($bg: red);
+    padding: 0.7rem 1rem 0.7rem 1rem;
+    &:hover {
+      scale: 1.04;
     }
   }
 }

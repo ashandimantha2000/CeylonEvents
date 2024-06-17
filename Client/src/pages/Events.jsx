@@ -3,12 +3,14 @@ import Hero from "../components/Hero/Hero";
 import Event from "../components/Event/Event";
 import Banner from "../components/Banner/Banner";
 import Newsletter from "../components/Newsletter/Newsletter";
+import EventDetails from "../components/Event/EventDetails";
 
 function Events() {
   return (
     <div>
       <Hero />
       <main>
+        <EventDetails />
         <Event />
       </main>
       <Banner />
