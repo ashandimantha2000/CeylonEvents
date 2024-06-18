@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 function LoginComp() {
   return (
-    <Layout>
+    <Layout bg="https://img3.wallspic.com/previews/0/5/0/7/17050/17050-daft_punk-deejay-disc_jockey-event-rock_concert-x750.jpg">
       <form>
         <h1>Login</h1>
         <br />

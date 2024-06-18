@@ -8,9 +8,8 @@ import EventDetails from "../components/Event/EventDetails";
 function Events() {
   return (
     <div>
-      <Hero />
+      <EventDetails />
       <main>
-        <EventDetails />
         <Event />
       </main>
       <Banner />

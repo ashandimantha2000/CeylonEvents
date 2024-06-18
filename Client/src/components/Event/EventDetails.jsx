@@ -8,7 +8,10 @@ import { CiMoneyBill } from "react-icons/ci";
 function EventDetails() {
   return (
     <div>
-      <div className={styles.details}>
+      <div className={styles.hero_img}>
+        <img src="https://scontent.fcmb4-2.fna.fbcdn.net/v/t39.30808-6/283861012_1201059000712645_4596136250013189292_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFMRE2drNBAc6cfSumjRWLnqWG6yu11K_qpYbrK7XUr-sG0-IOZiUYgiAiYBT6EjLSDIvbbyeccVmTurxSKZb1n&_nc_ohc=usoHzmkSRGcQ7kNvgHUJXp0&_nc_zt=23&_nc_ht=scontent.fcmb4-2.fna&oh=00_AYD80r2Y9gHn2JzZxDiBmm0_FKji8xDZ7DfpV5ikCELuMQ&oe=6677B24C" alt="home-back" />
+      </div>
+      <main className={styles.details}>
         <div className={styles.headline}>
           <h2>Naadhagama 2024</h2>
           <button>Buy Tickets</button>
@@ -36,7 +39,7 @@ function EventDetails() {
           aliquet dui netus. Amet ultrices non mattis adipiscing leo. Cras leo
           quis sit eget nulla lorem ut et diam.
         </p>
-      </div>
+      </main>
     </div>
   );
 }
