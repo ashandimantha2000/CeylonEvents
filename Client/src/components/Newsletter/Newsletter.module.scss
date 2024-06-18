@@ -23,24 +23,31 @@ h2 {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
-    input {
-      width: 20rem;
-      height: 3rem;
-      border-radius: 0rem;
-      border: 0rem;
-      padding: 0.5rem;
-      font-size: 1rem;
-      font-weight: 500;
-    }
-    button {
-      @include btn($bg: black, $stroke: white);
 
-      width: 12rem;
-      height: 3rem;
-      border-radius: 0rem;
+    form {
+      input {
+        width: 20rem;
+        height: 3rem;
+        border-radius: 0rem;
+        border: 0rem;
+        padding: 0.5rem;
+        font-size: 1rem;
+        font-weight: 500;
+      }
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      button {
+        @include btn($bg: black, $stroke: white);
+
+        width: 12rem;
+        height: 3rem;
+        border-radius: 0rem;
+      }
     }
-    p{
-        margin-right: 7rem;
+
+    p {
+      margin-right: 7rem;
     }
   }
 }

@@ -1,6 +1,6 @@
-import { NavLink } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import styles from "./Nav.module.scss";
-import { useLocation } from "react-router-dom";
 
 const data = [
   {
@@ -8,8 +8,8 @@ const data = [
     path: "/",
   },
   {
-    title: "Events",
-    path: "/events",
+    title: "Create Events",
+    path: "/create",
   },
   {
     title: "About",
@@ -23,8 +23,30 @@ const data = [
 
 function Nav() {
   const location = useLocation();
-  const page = location.pathname === "/login" || location.pathname === "/signup";
-  const navClass = `${styles.nav} ${page ? styles.navcolor : ''}`;
+  const page =
+    location.pathname === "/login" || location.pathname === "/signup";
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    // Add scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener on component unmount
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navClass = `${styles.nav} ${page ? styles.navcolor : ""} ${
+    isScrolled ? styles.navcolor : ""
+  }`;
+
   return (
     <>
       <div className={navClass}>

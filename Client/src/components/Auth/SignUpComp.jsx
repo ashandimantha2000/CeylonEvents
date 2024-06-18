@@ -1,10 +1,9 @@
 import { NavLink } from "react-router-dom";
-import Nav from "../Nav/Nav";
 import Layout from "./Layout";
 
 function SignUpComp() {
   return (
-    <Layout>
+    <Layout bg="https://wallpapercave.com/wp/wp2463807.jpg">
       <form>
         <h1>Sign Up</h1>
         <br />

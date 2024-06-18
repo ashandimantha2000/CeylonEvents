@@ -1,11 +1,13 @@
 import React, { Children } from "react";
 import styles from "./Auth.module.scss";
+import { useLocation } from "react-router-dom";
 
-function Signin({ children }) {
+function Signin({ children, bg }) {
+
   return (
     <div className={styles.all}>
       <div className={styles.left}>
-        <img src="https://wallpapercave.com/wp/wp2463807.jpg" alt="" />
+        <img src={bg} alt="" />
       </div>
       <div className={styles.right}>{children}</div>
     </div>
