@@ -1,5 +1,5 @@
 import styles from "./Newsletter.module.scss";
-
+// Commente here
 function Newsletter() {
   return (
     <>
