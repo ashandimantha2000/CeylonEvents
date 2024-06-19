@@ -6,6 +6,7 @@ import Footer from "../components/Footer/Footer";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
 import EventDetails from "../components/Event/EventDetails";
+import Profile from "../pages/Profile";
 
 function UserRoutes() {
   return (
@@ -16,6 +17,7 @@ function UserRoutes() {
         <Route path="/event-details/:_id" element={<EventDetails />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
       <Footer />
     </>
