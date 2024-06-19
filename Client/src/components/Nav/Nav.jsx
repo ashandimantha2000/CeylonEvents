@@ -24,7 +24,7 @@ const data = [
 function Nav() {
   const location = useLocation();
   const page =
-    location.pathname === "/login" || location.pathname === "/signup" || location.pathname === "/profile";
+    location.pathname === "/login" || location.pathname === "/signup" || location.pathname === "/profile" || location.pathname === "/create";
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
