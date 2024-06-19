@@ -16,10 +16,10 @@ function UserProfile() {
       <div className={styles.btns}>
         <button className={styles.edit}>Edit Password</button>
         <button className={styles.logout}>Log Out</button>
+
         <button className={styles.delete}>Delete Account</button>
       </div>
       <div className={styles.events}>
-    
         <h3>My Events</h3>
         <hr />
         <Event />
