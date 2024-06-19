@@ -8,6 +8,7 @@ function Home() {
     <div>
       <Hero />
       <main>
+        <h1 className="headerss">Upcoming Events</h1>
         <Event />
       </main>
       <Banner />

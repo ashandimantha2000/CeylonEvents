@@ -10,6 +10,7 @@ function Events() {
     <div>
       <EventDetails />
       <main>
+        
         <Event />
       </main>
       <Banner />
