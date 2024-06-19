@@ -5,6 +5,7 @@ import Events from "../pages/Events";
 import Footer from "../components/Footer/Footer";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
+import EventDetails from "../components/Event/EventDetails";
 
 function UserRoutes() {
   return (
@@ -12,7 +13,7 @@ function UserRoutes() {
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/events" element={<Events />} />
+        <Route path="/event-details/:_id" element={<EventDetails />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
       </Routes>

@@ -8,8 +8,10 @@ connectDB(process.env.MONGODB_URL);
 const eventRoute = require("./routes/eventRoute")
 const app = express();
 
+app.use(cors());
+
 app.get("/", (req, res) => {
-  app.send("Hello World!");
+  res.send("Hello World!");
 });
 
 //using routers
