@@ -19,12 +19,18 @@ function Footer() {
         <div>
           <div className={styles.contact}>
             <h4>Contact Us</h4>
-            <CiLocationOn size={24} />
-            <p>#22, Kandy Road, Colombo 07</p>
-            <CiMail size={24} />
-            <p>info@ceylonevents.lk</p>
-            <IoCallOutline size={23} />
-            <p>011 311 2927</p>
+            <div className={styles.contact_data}>
+              <CiLocationOn size={24} />
+              <p>#22, Kandy Road, Colombo 07</p>
+            </div>
+            <div className={styles.contact_data}>
+              <CiMail size={24} />
+              <p>info@ceylonevents.lk</p>
+            </div>
+            <div className={styles.contact_data}>
+              <IoCallOutline size={23} />
+              <p>011 311 2927</p>
+            </div>
           </div>
           <div className={styles.smm}>
             <h4>Follow Us</h4>
