@@ -2,12 +2,14 @@
   background: #22242a;
   color: white;
   padding: 3rem 4rem 2rem 4rem;
-  height: 16rem;
+  height: auto;
 
   &_row1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+
     button {
       background: white;
       color: black;
@@ -15,36 +17,41 @@
       border-radius: 0.8rem;
       margin-bottom: 1rem;
     }
-    .smm {
+
+    .smm,
+    .contact {
       display: flex;
       justify-content: start;
       align-items: center;
-      h4{
+      flex-wrap: wrap;
+      &_data {
+        display: flex;
+      }
+      h4 {
         padding-right: 2rem;
       }
+
       .icons {
         display: flex;
         justify-content: space-between;
         width: 10rem;
       }
-    }
-    .contact {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 1rem;
+
       p {
         padding: 0rem 3rem 0rem 1rem;
       }
-      h4{
+
+      h4 {
         padding-right: 1rem;
       }
     }
   }
+
   hr {
     margin: 2rem 0;
     height: 1px;
   }
+
   &_row2 {
     display: flex;
     align-items: center;
@@ -52,6 +59,32 @@
     text-align: center;
     p {
       font-size: 0.9rem;
+    }
+  }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem;
+
+    &_row1 {
+      flex-direction: column;
+
+      .smm,
+      .contact {
+        justify-content: center;
+
+        h4,
+        p {
+          padding-right: 0.5rem;
+        }
+      }
+
+      .icons {
+        justify-content: center;
+        padding-top: 1rem;
+      }
     }
   }
 }
