@@ -1,5 +1,6 @@
 @import "../../styles/base.scss";
 
+//Login and SignUp
 .all {
   display: flex;
   justify-content: space-between;
@@ -10,8 +11,7 @@
   .left {
     width: 50%;
     height: 100%;
-    img{
- 
+    img {
       object-fit: cover;
     }
   }
@@ -33,7 +33,6 @@
     }
   }
   a {
-    
     p {
       margin-top: 1rem;
       color: red;
@@ -41,6 +40,73 @@
   }
 }
 
-.signup{
+.signup {
   margin-top: 4rem;
+}
+
+//User Profile
+.profile {
+  margin-top: 6rem;
+  height: fill-available;
+  h1 {
+    margin-bottom: 1rem;
+  }
+  .data {
+    display: flex;
+    text-align: left;
+    h3,
+    p {
+      margin-right: 1rem;
+    }
+  }
+  .events {
+    margin-top: 2rem;
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+    hr {
+      margin-bottom: 1rem;
+    }
+  }
+  .btns {
+    margin-top: 1rem;
+
+    .edit {
+      @include btn($bg: black, $stroke: white);
+      margin-right: 0.6rem;
+    }
+    .logout_btn {
+      @include btn($bg: rgba(220, 114, 33, 0.866), $stroke: white);
+      margin-right: 0.6rem;
+    }
+    .delete {
+      @include btn($bg: red, $stroke: white);
+    }
+  }
+}
+
+//Logout
+.logoutstyles {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: #f1f1f1;
+  //add opacity to the background only
+  background-color: rgba(241, 241, 241, 0.8);
+  
+  .logdiv{
+    background-color: white;
+    padding: 2rem 4rem;
+    button {
+      @include btn2($bg: red, $stroke: white);
+    }
+    .no_btn{
+      @include btn2($bg: green, $stroke: white);
+      margin-left: 1rem;
+    }
+  }
 }

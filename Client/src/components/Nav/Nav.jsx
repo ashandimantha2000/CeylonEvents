@@ -24,8 +24,12 @@ const data = [
 function Nav() {
   const location = useLocation();
   const page =
-    location.pathname === "/login" || location.pathname === "/signup" || location.pathname === "/profile" || location.pathname === "/create";
+    location.pathname === "/login" ||
+    location.pathname === "/signup" ||
+    location.pathname === "/profile" ||
+    location.pathname === "/create";
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,6 +46,16 @@ function Nav() {
     // Clean up the event listener on component unmount
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    // Check if token exists in localStorage
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
+  }, [location]);
 
   const navClass = `${styles.nav} ${page ? styles.navcolor : ""} ${
     isScrolled ? styles.navcolor : ""
@@ -66,9 +80,15 @@ function Nav() {
                 </NavLink>
               );
             })}
-            <NavLink to="/login">
-              <button>Login</button>
-            </NavLink>
+            {isLoggedIn ? (
+              <NavLink to="/profile">
+                <button>Profile</button>
+              </NavLink>
+            ) : (
+              <NavLink to="/login">
+                <button>Login</button>
+              </NavLink>
+            )}
           </ul>
         </div>
       </div>
