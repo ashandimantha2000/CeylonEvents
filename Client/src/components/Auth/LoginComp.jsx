@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import axios from 'axios'; // Import axios
 import Layout from "./Layout";
 import { NavLink } from "react-router-dom";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
 
 function LoginComp() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -21,11 +24,23 @@ function LoginComp() {
       toast.error("Email and password are required!");
       return;
     }
-   
 
+    // Axios POST request to login
+    axios.post('http://localhost:3000/api/users/login', {
+      email: formData.email,
+      password: formData.password
+    })
+    .then(response => {
+      toast.success("Login Successful!");
+      navigate('/');
 
-    toast.success("Login Successful!");
-
+      localStorage.setItem('token', response.data.token);
+      // Redirect to another route
+    })
+    .catch(error => {
+      const message = error.response && error.response.data.msg ? error.response.data.msg : "An error occurred!";
+      toast.error(message);
+    });
   };
 
   return (
