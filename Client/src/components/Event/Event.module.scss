@@ -2,6 +2,7 @@
 $width: 18rem;
 $radius: 0.6rem;
 
+//Event Cards
 .all {
   width: 100%;
   display: flex;
@@ -28,6 +29,7 @@ $radius: 0.6rem;
         object-fit: cover;
       }
     }
+
     p {
       width: calc(#{$width} - 1rem);
       padding: 15px 0px;
@@ -61,6 +63,7 @@ $radius: 0.6rem;
   }
 }
 
+// Event Details
 .details {
   .headline {
     display: flex;
@@ -77,6 +80,21 @@ $radius: 0.6rem;
       margin: 1rem 2rem 1rem 0.4rem;
       font-size: 1rem;
       font-weight: 500;
+    }
+  }
+  .editor {
+    display: flex;
+    justify-content: end;
+    button {
+      @include btn2($bg: white, $stroke: black);
+      border: 1.5px solid black;
+      margin-right: 1rem;
+
+    }
+    .delete {
+      @include btn2($bg: white, $stroke: red);
+      border: 1.5px solid red;
+ 
     }
   }
   h2 {
