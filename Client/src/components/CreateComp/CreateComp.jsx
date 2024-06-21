@@ -1,23 +1,30 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import styles from './CreateComp.module.scss'; // Assuming you have CSS modules set up
+import React, { useState } from "react";
+import axios from "axios";
+import styles from "./CreateComp.module.scss"; // Assuming you have CSS modules set up
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const CreateComp = () => {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [date, setDate] = useState('');
-  const [time, setTime] = useState('');
-  const [location, setLocation] = useState('');
-  const [organizer, setOrganizer] = useState('');
-  const [price, setPrice] = useState('');
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+  const [location, setLocation] = useState("");
+  const [organizer, setOrganizer] = useState("");
+  const [price, setPrice] = useState("");
 
   const [file, setFile] = useState();
-  const navigate = useNavigate();
+
+  const success = () => {
+    toast("Event Created Successfully !");
+    setTimeout(() => {}, 2000);
+  };
+
+  const errorAlert = () => toast("Event Created failed");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     const formData = new FormData(); // Use FormData for multipart/form-data
     formData.append("name", title);
     formData.append("description", description);
@@ -35,15 +42,20 @@ const CreateComp = () => {
         },
       })
       .then(() => {
-        navigate("/");
+        success();
+        setTimeout(() => {
+          window.location = "/";
+        }, 2000);
       })
       .catch((error) => {
         console.error(error);
+        errorAlert();
       });
-};
+  };
 
   return (
     <div>
+      <ToastContainer />
       <main>
         <div className={styles.allform}>
           <h1>Create an event</h1>
@@ -110,7 +122,7 @@ const CreateComp = () => {
             <input
               type="file"
               id="image"
-              onChange={(e)=> setFile(e.target.files[0])}
+              onChange={(e) => setFile(e.target.files[0])}
             />
 
             <button type="submit">Create Event</button>
