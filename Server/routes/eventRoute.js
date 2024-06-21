@@ -4,9 +4,10 @@ const Event = require("../models/eventSchema");
 const router = express.Router();
 router.use(express.json());
 
+
 //Post
 router.post("/", async (req, res) => {
-  const { name, description, date, time, location, organizer, price, image } =
+  const { name, description, date, time, location, organizer, price } =
     req.body;
 
   if (
@@ -16,8 +17,8 @@ router.post("/", async (req, res) => {
     !time ||
     !location ||
     !organizer ||
-    !price ||
-    !image
+    !price
+
   )
     return res.status(400).send("Missing required fields");
 
@@ -29,8 +30,7 @@ router.post("/", async (req, res) => {
       time,
       location,
       organizer,
-      price,
-      image,
+      price
     });
     const savedEvent = await event.save();
     res.status(201).send(savedEvent);
@@ -66,7 +66,7 @@ router.get("/:id", async (req, res) => {
 //Update Events
 router.put("/:id", async (req, res) => {
   const { id } = req.params;
-  const { name, description, date, time, location, organizer, price, image } =
+  const { name, description, date, time, location, organizer, price } =
     req.body;
 
   try {
@@ -79,8 +79,7 @@ router.put("/:id", async (req, res) => {
         time,
         location,
         organizer,
-        price,
-        image,
+        price
       },
       { new: true, runValidators: true }
     );
@@ -93,9 +92,9 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-//Delete Events
-router.delete("/", async (req, res) => {
-  const { id } = req.params;
+// Delete Events route
+router.delete("/:id", async (req, res) => {
+  const { id } = req.params; // Ensure id is correctly extracted from params, not body
 
   try {
     const deletedEvent = await Event.findByIdAndDelete(id);

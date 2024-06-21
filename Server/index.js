@@ -17,6 +17,10 @@ app.get("/", (req, res) => {
 //using routers
 app.use('/events', eventRoute);
 
+app.post('/upload', (req, res) => {
+  res.send('File uploaded');
+});
+
 //Listeing to the port
 app.listen(port, () => {
   console.log(`Server is running in the port ${port}`);
