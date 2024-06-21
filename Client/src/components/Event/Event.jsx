@@ -23,8 +23,6 @@ function Event() {
       .get("http://localhost:3000/events/")
       .then((response) => {
         setEvents(response.data);
-        console.log("all events");
-        console.log(response.data);
       })
       .catch((error) => {
         console.log(error);

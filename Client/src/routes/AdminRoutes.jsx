@@ -1,8 +1,15 @@
-import React from 'react'
+import { Route, Routes } from "react-router-dom"
+import Dashboard from "../pages/Admin/Dashboard";
+import AdminLogin from "../pages/Admin/AdminLogin";
 
 function adminRoutes() {
   return (
-    <div>adminRoutes</div>
+    <>
+      <Routes>
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/login" element={<AdminLogin />} />
+      </Routes>
+    </>
   )
 }
 

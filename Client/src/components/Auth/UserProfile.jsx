@@ -1,16 +1,34 @@
+import { useState, useEffect } from "react";
 import styles from "./Auth.module.scss";
-import Event from "../Event/Event";
 import Logout from "./Logout";
-import { useState } from "react";
+import Event from "../Event/Event";
 
 function UserProfile() {
   const [logclick, setLogClick] = useState(false);
+  const [isAuthorized, setIsAuthorized] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+  
+    if (!token) {
+      window.location.href = "/login";
+    } else {
+      setIsAuthorized(true);
+    }
+  }, []);
+
   const logoutClick = () => {
     setLogClick(true);
   };
+
   const handleCancelLogout = () => {
     setLogClick(false);
   };
+
+  if (!isAuthorized) {
+    return null; 
+  }
+
   return (
     <div>
       {logclick && <Logout onCancel={handleCancelLogout} />}
@@ -26,7 +44,9 @@ function UserProfile() {
         </div>
         <div className={styles.btns}>
           <button className={styles.edit}>Edit Password</button>
-          <button className={styles.logout_btn} onClick={logoutClick}>Log Out</button>
+          <button className={styles.logout_btn} onClick={logoutClick}>
+            Log Out
+          </button>
           <button className={styles.delete}>Delete Account</button>
         </div>
         <div className={styles.events}>
