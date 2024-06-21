@@ -33,30 +33,35 @@ function Event() {
   return (
     <div>
       <div className={styles.all}>
-        {events.map((event, index) => (
-          <div key={event.index} className={styles.card}>
-            <div>
+        {events
+          .sort((a, b) => new Date(a.createdDate) - new Date(b.createdDate))
+          .map((event, index) => (
+            <div key={event.index} className={styles.card}>
               <div>
-                <img src={`http://localhost:3000/${event.image}`} alt="event-image" />
-              </div>
-              <div className={styles.cardspace}>
-                <div className={styles.card_data}>
-                  <CiCalendar />
-                  <h5>{new Date(event.date).toLocaleDateString()}</h5>
-                  <CiClock2 />
-                  <h5>{event.time}</h5>
-                  <IoLocationOutline />
-                  <h5>{event.location}</h5>
+                <div>
+                  <img
+                    src={`http://localhost:3000/${event.image}`}
+                    alt="event-image"
+                  />
                 </div>
-                <h3>{event.name}</h3>
-                <p>{event.description.slice(0, 250)}...</p>
-                <a onClick={() => navigate(`/event-details/${event._id}`)}>
-                  <button>View Details</button>
-                </a>
+                <div className={styles.cardspace}>
+                  <div className={styles.card_data}>
+                    <CiCalendar />
+                    <h5>{new Date(event.date).toLocaleDateString()}</h5>
+                    <CiClock2 />
+                    <h5>{event.time}</h5>
+                    <IoLocationOutline />
+                    <h5>{event.location}</h5>
+                  </div>
+                  <h3>{event.name}</h3>
+                  <p>{event.description.slice(0, 250)}...</p>
+                  <a onClick={() => navigate(`/event-details/${event._id}`)}>
+                    <button>View Details</button>
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
       </div>
     </div>
   );

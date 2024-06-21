@@ -1,0 +1,21 @@
+// @import "../../styles/base.scss";
+@import "../../../styles/base.scss";
+
+main {
+  background-color: #f1f1f1;
+  width: 100%;
+  .allform {
+    margin-top: 5rem;
+    form{
+        width: 100%;
+        input, textarea{
+            width: 100%;
+        }
+    }
+  }
+  button{
+    margin-top: 1rem;
+    @include btn($bg: black, $stroke: white);
+    padding: 0.6rem;
+  }
+}

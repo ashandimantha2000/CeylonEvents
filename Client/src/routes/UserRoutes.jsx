@@ -8,6 +8,7 @@ import SignUp from "../pages/SignUp";
 import EventDetails from "../components/Event/EventDetails";
 import Profile from "../pages/Profile";
 import Create from "../pages/Create";
+import Edit from "../pages/Edit";
 
 function UserRoutes() {
   return (
@@ -20,6 +21,7 @@ function UserRoutes() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/edit/:id" element={<Edit />} />
       </Routes>
       <Footer />
     </>
