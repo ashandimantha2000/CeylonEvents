@@ -30,7 +30,7 @@ function EventDetails() {
       {event ? (
         <div>
           <div className={styles.hero_img}>
-            <img src={event.image} alt="home-back" />
+            <img src={`http://localhost:3000/${event.image}`} alt="home-back" />
           </div>
           <main className={styles.details}>
             <div className={styles.headline}>

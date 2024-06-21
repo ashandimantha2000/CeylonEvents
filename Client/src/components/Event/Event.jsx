@@ -23,6 +23,8 @@ function Event() {
       .get("http://localhost:3000/events/")
       .then((response) => {
         setEvents(response.data);
+        console.log("all events");
+        console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -30,13 +32,12 @@ function Event() {
   }, []);
   return (
     <div>
-      
       <div className={styles.all}>
         {events.map((event, index) => (
           <div key={event.index} className={styles.card}>
             <div>
               <div>
-                <img src={event.image} alt="" />
+                <img src={`http://localhost:3000/${event.image}`} alt="event-image" />
               </div>
               <div className={styles.cardspace}>
                 <div className={styles.card_data}>
