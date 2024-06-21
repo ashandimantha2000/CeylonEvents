@@ -11,6 +11,7 @@ import Event from "./Event";
 import Spinner from "../Spinner/Spinner";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Link } from "react-router-dom";
 
 function EventDetails() {
   const [event, setEvent] = useState(null);
@@ -28,20 +29,20 @@ function EventDetails() {
       });
   }, [_id]);
 
- const handleDelete = ()=>{
-  axios
-  .delete(`http://localhost:3000/events/${_id}`)
-  .then(() => {
-    deleted();
-    setTimeout(() => {
-      window.location = "/";
-    }, 2000);
-  })
-  .catch((error) => {
-    console.log(error);
-    alert("Failed to delete event");
-  });
- }
+  const handleDelete = () => {
+    axios
+      .delete(`http://localhost:3000/events/${_id}`)
+      .then(() => {
+        deleted();
+        setTimeout(() => {
+          window.location = "/";
+        }, 2000);
+      })
+      .catch((error) => {
+        console.log(error);
+        alert("Failed to delete event");
+      });
+  };
 
   return (
     <div>
@@ -70,8 +71,12 @@ function EventDetails() {
             </div>
             <p>{event.description}</p>
             <div className={styles.editor}>
-              <button>Edit Event</button>
-              <button onClick={handleDelete} className={styles.delete}>Delete Event</button>
+              <Link to={`/edit/${_id}`}>
+                <button>Edit Event</button>
+              </Link>
+              <button onClick={handleDelete} className={styles.delete}>
+                Delete Event
+              </button>
             </div>
             <h1 className="headerss">Related Events</h1>
             <Event />

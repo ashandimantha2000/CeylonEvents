@@ -78,13 +78,13 @@ router.get("/:id", async (req, res) => {
 //Update Events
 router.put("/:id", async (req, res) => {
   const { id } = req.params;
-  const { name, description, date, time, location, organizer, price } =
+  const { name, description, date, time, location, organizer, price, image } =
     req.body;
 
   try {
     const updatedEvent = await Event.findByIdAndUpdate(
       id,
-      { name, description, date, time, location, organizer, price },
+      { name, description, date, time, location, organizer, price,image },
       { new: true, runValidators: true }
     );
     if (!updatedEvent) {

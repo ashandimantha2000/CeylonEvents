@@ -1,4 +1,4 @@
-import CreateComp from '../components/CreateComp/CreateComp'
+import CreateComp from '../components/Event/CreateComp/CreateComp'
 
 function Create() {
   return (
