@@ -11,26 +11,27 @@ const CreateComp = () => {
   const [location, setLocation] = useState('');
   const [organizer, setOrganizer] = useState('');
   const [price, setPrice] = useState('');
-  // const [image, setImage] = useState(null); // Uncomment if handling images
+
+  const [file, setFile] = useState();
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formData = {
-      name: title,
-      description,
-      date,
-      time,
-      location,
-      organizer,
-      price: parseFloat(price), // Ensure price is correctly formatted as a number
-      // image, // Uncomment if handling images
-    };
+    
+    const formData = new FormData(); // Use FormData for multipart/form-data
+    formData.append("name", title);
+    formData.append("description", description);
+    formData.append("date", date);
+    formData.append("time", time);
+    formData.append("location", location);
+    formData.append("organizer", organizer);
+    formData.append("price", parseFloat(price));
+    formData.append("file", file); // Correctly append file to formData
 
     axios
       .post("http://localhost:3000/events", formData, {
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "multipart/form-data", // Correct Content-Type for file upload
         },
       })
       .then(() => {
@@ -38,9 +39,8 @@ const CreateComp = () => {
       })
       .catch((error) => {
         console.error(error);
-        alert("Failed to create event");
       });
-  };
+};
 
   return (
     <div>
@@ -106,13 +106,12 @@ const CreateComp = () => {
               required
             />
 
-            {/* Uncomment if handling images */}
-            {/* <label htmlFor="image">Image</label>
+            <label htmlFor="image">Image</label>
             <input
               type="file"
               id="image"
-              onChange={(e) => setImage(e.target.files[0])}
-            /> */}
+              onChange={(e)=> setFile(e.target.files[0])}
+            />
 
             <button type="submit">Create Event</button>
           </form>
