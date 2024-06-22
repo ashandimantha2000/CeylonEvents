@@ -5,6 +5,8 @@ import content from "./Events.json";
 import { CiCalendar } from "react-icons/ci";
 import { CiClock2 } from "react-icons/ci";
 import { IoLocationOutline } from "react-icons/io5";
+//import organize icon
+
 import { useLocation, useNavigate } from "react-router-dom";
 
 function Event() {

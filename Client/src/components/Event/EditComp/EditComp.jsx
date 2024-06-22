@@ -20,7 +20,7 @@ const EditComp = () => {
     const success = () => {
       toast("Event Saved Successfully !");
       setTimeout(() => {
-        navigate("/some-path");
+        navigate("/");
       }, 2000);
     };
     
@@ -37,22 +37,26 @@ const EditComp = () => {
       formData.append("location", location);
       formData.append("organizer", organizer);
       formData.append("price", parseFloat(price));
-      formData.append("file", file);
     
       axios
         .put(`http://localhost:3000/events/${id}`, formData, {
           headers: {
-            "Content-Type": "multipart/form-data", 
+            "Content-Type": "multipart/form-data",
           },
         })
-        .then(() => {
-          success();
+        .then((response) => {
+          if (response.status === 200) {
+            success();
+          } else {
+            console.error("Update failed with status:", response.status);
+            errorAlert({ message: `Update failed with status: ${response.status}` });
+          }
         })
         .catch((error) => {
+          console.error("Update error:", error.response ? error.response.data : error);
           errorAlert(error);
         });
     };
-
 
   return (
     <div>
