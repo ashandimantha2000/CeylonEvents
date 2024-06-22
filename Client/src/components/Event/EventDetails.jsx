@@ -1,12 +1,9 @@
 import styles from "./Event.module.scss";
-import content from "./Events.json";
 import axios from "axios";
-import { CiCalendar } from "react-icons/ci";
-import { CiClock2 } from "react-icons/ci";
+import { CiCalendar, CiClock2, CiMoneyBill } from "react-icons/ci";
 import { IoLocationOutline } from "react-icons/io5";
-import { CiMoneyBill } from "react-icons/ci";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import Event from "./Event";
 import Spinner from "../Spinner/Spinner";
 import { ToastContainer, toast } from "react-toastify";
@@ -14,11 +11,9 @@ import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
 import EventDelete from "./EventDelete";
 
-
 function EventDetails() {
   const [event, setEvent] = useState(null);
   const { _id } = useParams();
-
   const [isdeleted, setIsDeleted] = useState(false);
 
   const deleted = () => toast("Event deleted successfully!");
@@ -33,17 +28,17 @@ function EventDetails() {
       });
   }, [_id]);
 
-const handleDeletePopup = () => {
-  setIsDeleted(true);
-}
+  const handleDeletePopup = () => {
+    setIsDeleted(true);
+  };
 
-const deleteClose = () => {
-  setIsDeleted(false);
-}
+  const deleteClose = () => {
+    setIsDeleted(false);
+  };
 
   return (
     <div>
-      { isdeleted&& <EventDelete onCancel={deleteClose} _id={_id}  />}
+      {isdeleted && <EventDelete onCancel={deleteClose} _id={_id} />}
       <ToastContainer />
       {event ? (
         <div>
@@ -53,7 +48,9 @@ const deleteClose = () => {
           <main className={styles.details}>
             <div className={styles.headline}>
               <h2>{event.name}</h2>
-              <button>Buy Tickets</button>
+              <NavLink to={`/paypal?price=${event.price}`}>
+                <button>Buy Tickets</button>
+              </NavLink>
             </div>
             <div className={styles.details_data}>
               <CiCalendar size={25} color="red" />
