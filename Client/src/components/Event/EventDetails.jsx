@@ -2,6 +2,7 @@ import styles from "./Event.module.scss";
 import axios from "axios";
 import { CiCalendar, CiClock2, CiMoneyBill } from "react-icons/ci";
 import { IoLocationOutline } from "react-icons/io5";
+import { MdEvent } from "react-icons/md";
 import { useEffect, useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import Event from "./Event";
@@ -12,6 +13,14 @@ import { Link } from "react-router-dom";
 import EventDelete from "./EventDelete";
 
 function EventDetails() {
+  const [isAuthorized, setIsAuthorized] = useState(false);
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsAuthorized(true);
+    } 
+  }, []);
+
   const [event, setEvent] = useState(null);
   const { _id } = useParams();
   const [isdeleted, setIsDeleted] = useState(false);
@@ -61,18 +70,20 @@ function EventDetails() {
               <h5>{event.location}</h5>
               <CiMoneyBill size={25} color="red" />
               <h5>{event.price}</h5>
-              <CiMoneyBill size={25} color="red" />
+              <MdEvent size={25} color="red" />
               <h5>{event.organizer}</h5>
             </div>
             <p>{event.description}</p>
-            <div className={styles.editor}>
-              <Link to={`/edit/${_id}`}>
-                <button>Edit Event</button>
-              </Link>
-              <button onClick={handleDeletePopup} className={styles.delete}>
-                Delete Event
-              </button>
-            </div>
+            {isAuthorized && (
+              <div className={styles.editor}>
+                <Link to={`/edit/${_id}`}>
+                  <button>Edit Event</button>
+                </Link>
+                <button onClick={handleDeletePopup} className={styles.delete}>
+                  Delete Event
+                </button>
+              </div>
+            )}
             <h1 className="headerss">Related Events</h1>
             <Event />
           </main>

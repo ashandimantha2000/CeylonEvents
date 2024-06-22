@@ -78,12 +78,12 @@ function AdminData() {
                     </div>
                   </div>
                   <div className={styles.admin_buttons}>
-                    <button
+                    {/* <button
                       className={styles.edit}
-                      onClick={() => navigate(`/edit-event/${event._id}`)}
+                      // onClick={() => navigate(`/edit-event/${event._id}`)}
                     >
                       Edit
-                    </button>
+                    </button> */}
                     <button
                       className={styles.delete}
                       onClick={handleDeletePopup}
