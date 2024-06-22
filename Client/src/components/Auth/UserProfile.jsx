@@ -36,11 +36,11 @@ function UserProfile() {
         <h1>User Profile</h1>
         <div className={styles.data}>
           <h3>Name :</h3>
-          <p>John Doe</p>
+          <p>Ashan Dimantha</p>
         </div>
         <div className={styles.data}>
           <h3>Email :</h3>
-          <p>johndoe@gmail.co</p>
+          <p>ashan.self@gmail.com</p>
         </div>
         <div className={styles.btns}>
           <button className={styles.edit}>Edit Password</button>

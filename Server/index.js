@@ -3,12 +3,13 @@ const express = require("express");
 const cors = require("cors");
 const path = require("path"); 
 const port = process.env.PORT;
-
+const bodyParser = require('body-parser');
 
 const connectDB = require("./dbConnect");
 connectDB(process.env.MONGODB_URL);
 const eventRoute = require("./routes/eventRoute")
 const userRouter = require('./routes/userRoute');
+const paypalRoutes = require('./routes/paypal');
 const app = express();
 
 app.use(cors());
@@ -23,8 +24,8 @@ app.get("/", (req, res) => {
 
 //using routers
 app.use('/events', eventRoute);
-
 app.use('/api/users', userRouter);
+app.use('/api/paypal', paypalRoutes);
 
 //Listeing to the port
 app.listen(port, () => {

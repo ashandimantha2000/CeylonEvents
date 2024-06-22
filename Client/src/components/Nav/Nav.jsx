@@ -15,10 +15,6 @@ const data = [
     title: "About",
     path: "/about",
   },
-  {
-    title: "Contact",
-    path: "/contact",
-  },
 ];
 
 function Nav() {
@@ -27,7 +23,8 @@ function Nav() {
     location.pathname === "/login" ||
     location.pathname === "/signup" ||
     location.pathname === "/profile" ||
-    location.pathname === "/create";
+    location.pathname === "/create" ||
+    location.pathname === "/about";
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 

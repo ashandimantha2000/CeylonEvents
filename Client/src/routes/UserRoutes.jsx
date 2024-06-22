@@ -9,6 +9,8 @@ import EventDetails from "../components/Event/EventDetails";
 import Profile from "../pages/Profile";
 import Create from "../pages/Create";
 import Edit from "../pages/Edit";
+import Paypal from "../pages/Paypal/Paypal";
+import About from "../pages/About";
 
 function UserRoutes() {
   return (
@@ -22,6 +24,8 @@ function UserRoutes() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/edit/:id" element={<Edit />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/paypal" element={<Paypal />} />
       </Routes>
       <Footer />
     </>
