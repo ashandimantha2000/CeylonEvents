@@ -1,10 +1,13 @@
 @import "../../styles/base";
 
 //Event Cards
-.all {
+main{
+  background: white;
+  .all {
     width: 100%;
   .card {
-    background: rgb(234, 234, 234);
+    width: 100%;
+    background: rgb(235, 235, 235);
     border-radius: 0.8rem;
     margin-top: 1rem;
     padding: 1rem;
@@ -12,7 +15,7 @@
     justify-content: start;
     align-items: center;
     .admin_buttons {
-      padding: 0rem 0rem 0rem 7rem;
+      padding: 0rem 5rem 0rem 10rem;
       .edit {
         @include btn2($bg: black, $stroke: white);
         margin-right: 0.4rem;
@@ -40,4 +43,6 @@
       }
     }
   }
+}
+
 }

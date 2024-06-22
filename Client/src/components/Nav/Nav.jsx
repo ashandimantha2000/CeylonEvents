@@ -24,6 +24,7 @@ function Nav() {
     location.pathname === "/signup" ||
     location.pathname === "/profile" ||
     location.pathname === "/create" ||
+    location.pathname === "/paypal" ||
     location.pathname === "/about";
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);

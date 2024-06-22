@@ -8,7 +8,9 @@ function Banner() {
         <div className={styles.card_data}>
           <h3>Add your own</h3>
           <h1>Events</h1>
-          <button>Post an Event</button>
+          <a href="/create">
+            <button>Post an Event</button>
+          </a>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet,
             corrupti aspernatur necessitatibus tenetur praesentium magnam, quas
