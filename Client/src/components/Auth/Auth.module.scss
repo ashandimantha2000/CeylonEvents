@@ -86,23 +86,26 @@
   }
 }
 
-//Logout
+//Logout and delete popu
 .logoutstyles {
+  height: 100%;
+  width: 100%;
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  width: 100%;
-  background-color: #f1f1f1;
   //add opacity to the background only
   background-color: rgba(241, 241, 241, 0.8);
   
   .logdiv{
     background-color: white;
     padding: 2rem 4rem;
+    border-radius: 10px;
     button {
       @include btn2($bg: red, $stroke: white);
+    }
+    p{
+      margin: 0.5rem 0;
     }
     .no_btn{
       @include btn2($bg: green, $stroke: white);
